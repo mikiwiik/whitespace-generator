@@ -11,7 +11,8 @@ public class PrinterTester {
             .ioPopChar()
             .ioPopChar()
             .ioPopChar()
-            .flowEndProgram();
+            .flowEndProgram()
+            .toString();
 
         String shellOutput = ShellHelper.runWSpaceInShell(program);
         System.out.print(shellOutput);

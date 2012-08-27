@@ -65,14 +65,16 @@ public class WhiteSpaceProgram {
      * [LF][LF]	-	End the program
      * @return
      */
-    public String flowEndProgram() {
+    public WhiteSpaceProgram flowEndProgram() {
         program.append(IMP_FLOW).append("\n\n");
-        return program.toString();
+        return this;
     }
 
-    /*@Override
+    /**
+     * @return The current program as a String.
+     */
+    @Override
     public String toString() {
         return program.toString();
-    }*/
-
+    }
 }
