@@ -16,7 +16,6 @@ public class WhiteSpaceProgram {
     //private final StringBuilder sb = new StringBuilder(IMP_STACK);
     private final StringBuilder program = new StringBuilder();
 
-
     /*Stack Manipulation (IMP: [Space])
     Stack manipulation is one of the more common operations, hence the shortness of the IMP [Space]. There are four stack instructions.
 
@@ -34,12 +33,15 @@ public class WhiteSpaceProgram {
         return this;
     }
 
+    /*I/O (IMP: [Tab][LF])
+    Finally, we need to be able to interact with the user. There are IO instructions for reading and writing numbers and individual characters. With these, string manipulation routines can be written (see examples to see how this may be done).
+    The read instructions take the heap address in which to store the result from the top of the stack.
 
-    /* I/O
-   [Space][Tab]	-	Output the number at the top of the stack
-   [Tab][Space]	-	Read a character and place it in the location given by the top of the stack
-   [Tab][Tab]	-	Read a number and place it in the location given by the top of the stack
-   * */
+    Command	Parameters	Meaning
+    [Space][Space]	-	Output the character at the top of the stack
+    [Space][Tab]	-	Output the number at the top of the stack
+    [Tab][Space]	-	Read a character and place it in the location given by the top of the stack
+    [Tab][Tab]	-	Read a number and place it in the location given by the top of the stack */
 
     //     [Space][Space]	-	Output the character at the top of the stack
     public WhiteSpaceProgram ioPopChar() {
@@ -48,7 +50,6 @@ public class WhiteSpaceProgram {
     }
 
     /* Flow Control (IMP: [LF])
-
     Flow control operations are also common. Subroutines are marked by labels, as well as the targets of conditional and unconditional jumps, by which loops can be implemented. Programs must be ended by means of [LF][LF][LF] so that the interpreter can exit cleanly.
 
     Command	Parameters	Meaning
