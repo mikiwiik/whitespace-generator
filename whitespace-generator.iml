@@ -20,6 +20,10 @@
     <orderEntry type="library" scope="TEST" name="Maven: net.avh4.util:imagecomparison:0.0.2" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.hamcrest:hamcrest-all:1.1" level="project" />
     <orderEntry type="library" name="Maven: commons-io:commons-io:2.0.1" level="project" />
+    <orderEntry type="library" name="Maven: com.google.guava:guava-collections:r03" level="project" />
+    <orderEntry type="library" name="Maven: com.google.guava:guava-annotations:r03" level="project" />
+    <orderEntry type="library" name="Maven: com.google.guava:guava-primitives:r03" level="project" />
+    <orderEntry type="library" name="Maven: com.google.guava:guava-base:r03" level="project" />
   </component>
 </module>
 
