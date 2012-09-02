@@ -10,7 +10,9 @@ public class WhiteSpaceProgram {
     final static private String STACK_PUSH_NR = " ";
 
     //[LF]	Flow Control
-    final static private String IMP_FLOW = "\n\n";
+    final static private String IMP_FLOW = "\n";
+    //[LF][LF]	-	End the program
+    final static private String FLOW_END_PROGRAM = "\n\n";
 
     //[Tab][LF]	I/O
     final static private String IMP_IO = "\t\n";
@@ -48,7 +50,7 @@ public class WhiteSpaceProgram {
      * @return
      */
     public WhiteSpaceProgram flowEndProgram() {
-        program.append(IMP_FLOW).append("\n\n");
+        program.append(IMP_FLOW).append(FLOW_END_PROGRAM).append(CR);
         return this;
     }
 
