@@ -32,5 +32,9 @@ public class BitUtilsTest {
         assertEquals("H: 01001000 \t  \t   ",
             "  \t  \t   ",
             BitUtils.charAsWspaceNumber('H'));
+
+        assertEquals("SPACE: 00100000  \t     ",
+            "   \t     ",
+            BitUtils.charAsWspaceNumber(' '));
     }
 }
