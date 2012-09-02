@@ -6,7 +6,7 @@ import java.io.UnsupportedEncodingException;
 import java.util.List;
 
 /**
- * Miscallaneous bit-operation related util methods
+ * Miscellaneous bit-operation related util methods
  */
 public class BitUtils {
 
