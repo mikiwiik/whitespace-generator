@@ -18,8 +18,14 @@ public class WhiteSpaceProgram {
     //[Tab][Tab]	Heap access
     //[LF]	Flow Control
     final static private String IMP_FLOW = "\n\n";
+
     //[Tab][LF]	I/O
     final static private String IMP_IO = "\t\n";
+    final static private String IO_POP_CHAR = "  ";
+    /* [Space][Tab]	-	Output the number at the top of the stack
+    [Tab][Space]	-	Read a character and place it in the location given by the top of the stack
+    [Tab][Tab]	-	Read a number and place it in the location given by the top of the stack */
+
 
     //private final StringBuilder sb = new StringBuilder(IMP_STACK);
     private final StringBuilder program = new StringBuilder();
@@ -48,19 +54,14 @@ public class WhiteSpaceProgram {
         return this;
     }
 
-    /*I/O (IMP: [Tab][LF])
-     Finally, we need to be able to interact with the user. There are IO instructions for reading and writing numbers and individual characters. With these, string manipulation routines can be written (see examples to see how this may be done).
-     The read instructions take the heap address in which to store the result from the top of the stack.
-
-     Command	Parameters	Meaning
-     [Space][Space]	-	Output the character at the top of the stack
-     [Space][Tab]	-	Output the number at the top of the stack
-     [Tab][Space]	-	Read a character and place it in the location given by the top of the stack
-     [Tab][Tab]	-	Read a number and place it in the location given by the top of the stack */
-
-    //     [Space][Space]	-	Output the character at the top of the stack
+    /**
+     * Output the character at the top of the stack.
+     * @return
+     */
     public WhiteSpaceProgram ioPopChar() {
-        program.append(IMP_IO).append("  ").append(CR);
+        program.append(IMP_IO)
+            .append(IO_POP_CHAR)
+            .append(CR);
         return this;
     }
 
