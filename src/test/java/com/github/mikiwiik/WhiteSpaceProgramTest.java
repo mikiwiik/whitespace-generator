@@ -10,7 +10,7 @@ public class WhiteSpaceProgramTest {
     public void testPushSingleChar() {
         final String program = new WhiteSpaceProgram().stackPushChar('j').toString();
         assertEquals("SS(Stack IMP, push nr) S(pos nr) STTSTSTS(j) CR",
-            "    \t\t \t \t \r", program);
+            "    \t\t \t \t \n\r", program);
     }
 
     @Test
