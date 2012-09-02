@@ -46,7 +46,7 @@ public class WhiteSpaceProgram {
      * @return
      */
     public WhiteSpaceProgram stackPushChar(char character) {
-        final String charAsWspace = BitUtils.charAsWspaceNumber(character);
+        final String charAsWspace = WhiteSpaceUtils.charAsNumber(character);
         program.append(IMP_STACK)
             .append(STACK_PUSH_NR)
             .append(charAsWspace)

@@ -1,9 +1,6 @@
 package com.github.mikiwiik;
 
-/**
- * Miscellaneous bit-operation related util methods
- */
-public class BitUtils {
+public class WhiteSpaceUtils {
 
     /**
      * Convert the given char into a String containing whitespace representation of a character number.<br/>
@@ -20,7 +17,7 @@ public class BitUtils {
      * @param character
      * @return 
      */
-    public static String charAsWspaceNumber(char character) {
+    public static String charAsNumber(char character) {
         // NOTE: all characters are positive wspace numbers.
         final StringBuilder stringBuilder = new StringBuilder(" ");
 

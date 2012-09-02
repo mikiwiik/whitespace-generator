@@ -4,24 +4,24 @@ import org.junit.Test;
 
 import static junit.framework.Assert.assertEquals;
 
-public class BitUtilsTest {
+public class WhiteSpaceUtilsTest {
 
     @Test
     public void testConvertingSingleChars() throws Exception {
         assertEquals("LF: 00001010    \t \t ",
             "     \t \t \n",
-            BitUtils.charAsWspaceNumber('\n'));
+            WhiteSpaceUtils.charAsNumber('\n'));
 
         assertEquals("j: 01101010 \t\t \t \t ",
             "  \t\t \t \t \n",
-            BitUtils.charAsWspaceNumber('j'));
+            WhiteSpaceUtils.charAsNumber('j'));
 
         assertEquals("H: 01001000 \t  \t   ",
             "  \t  \t   \n",
-            BitUtils.charAsWspaceNumber('H'));
+            WhiteSpaceUtils.charAsNumber('H'));
 
         assertEquals("SPACE: 00100000  \t     ",
             "   \t     \n",
-            BitUtils.charAsWspaceNumber(' '));
+            WhiteSpaceUtils.charAsNumber(' '));
     }
 }
