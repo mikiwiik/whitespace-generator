@@ -29,6 +29,7 @@ public class WhiteSpaceProgram {
 
     // TODO: push(Char) & push(BigInteger) -> Convert to ws binary notation
     public WhiteSpaceProgram stackPushString(String string) {
+        // NOTE: Characters are always positive, negative gives "Fail: Prelude.chr: bad argument"
         program.append(IMP_STACK).append(" ").append(string).append(CR);
         return this;
     }
