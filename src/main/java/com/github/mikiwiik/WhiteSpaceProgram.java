@@ -34,15 +34,25 @@ public class WhiteSpaceProgram {
         return this;
     }
 
-    /*I/O (IMP: [Tab][LF])
-    Finally, we need to be able to interact with the user. There are IO instructions for reading and writing numbers and individual characters. With these, string manipulation routines can be written (see examples to see how this may be done).
-    The read instructions take the heap address in which to store the result from the top of the stack.
+    /**
+     * Push given char to stack as positive wspace number
+     * @param character
+     * @return
+     */
+    public WhiteSpaceProgram stackPushChar(char character) {
+        program.append(IMP_STACK).append(BitUtils.charAsWspaceNumber(character)).append(CR);
+        return this;
+    }
 
-    Command	Parameters	Meaning
-    [Space][Space]	-	Output the character at the top of the stack
-    [Space][Tab]	-	Output the number at the top of the stack
-    [Tab][Space]	-	Read a character and place it in the location given by the top of the stack
-    [Tab][Tab]	-	Read a number and place it in the location given by the top of the stack */
+    /*I/O (IMP: [Tab][LF])
+     Finally, we need to be able to interact with the user. There are IO instructions for reading and writing numbers and individual characters. With these, string manipulation routines can be written (see examples to see how this may be done).
+     The read instructions take the heap address in which to store the result from the top of the stack.
+
+     Command	Parameters	Meaning
+     [Space][Space]	-	Output the character at the top of the stack
+     [Space][Tab]	-	Output the number at the top of the stack
+     [Tab][Space]	-	Read a character and place it in the location given by the top of the stack
+     [Tab][Tab]	-	Read a number and place it in the location given by the top of the stack */
 
     //     [Space][Space]	-	Output the character at the top of the stack
     public WhiteSpaceProgram ioPopChar() {
