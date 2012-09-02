@@ -8,7 +8,7 @@ import static junit.framework.Assert.assertEquals;
 public class BitUtilsTest {
 
     @Test
-    public void test() throws Exception {
+    public void testConvertingSingleCharacters() throws Exception {
         // LF:000001010
 
         assertEquals("j:01101010",
@@ -18,5 +18,19 @@ public class BitUtilsTest {
         assertEquals("H:01001000",
                 Lists.newArrayList(false,true,false,false, true,false,false,false),
                 BitUtils.asciiAsBinary("H"));
+    }
+    @Test
+    public void testConvertingSingleChars() throws Exception {
+        assertEquals("LF: 00001010    \t \t ",
+            "     \t \t ",
+            BitUtils.charAsWspaceNumber('\n'));
+
+        assertEquals("j: 01101010 \t\t \t \t ",
+            "  \t\t \t \t ",
+            BitUtils.charAsWspaceNumber('j'));
+
+        assertEquals("H: 01001000 \t  \t   ",
+            "  \t  \t   ",
+            BitUtils.charAsWspaceNumber('H'));
     }
 }

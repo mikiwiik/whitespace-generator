@@ -34,4 +34,25 @@ public class BitUtils {
         }
         return bits.build();
     }
+
+    /**
+     * Convert the given char into a String containing whitespace representation of a character number.
+     * <br/>
+     * NOTE: Behaviour is very much undefined for non-ascii chars.
+     *
+     * @param character
+     * @return 
+     */
+    public static String charAsWspaceNumber(char character) {
+        // NOTE: all characters are positive wspace numbers.
+        final StringBuilder stringBuilder = new StringBuilder(" ");
+
+        int asciiValue = (int)character;
+        for (int i = 0; i < 8; i++) {
+            final boolean binaryValue = (asciiValue & 128) != 0;
+            stringBuilder.append(binaryValue ? '\t' : ' ');
+            asciiValue <<= 1;
+        }
+        return stringBuilder.toString();
+    }
 }
