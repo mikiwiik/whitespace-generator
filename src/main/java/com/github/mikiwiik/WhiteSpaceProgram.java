@@ -6,6 +6,14 @@ public class WhiteSpaceProgram {
 
     //[Space]	Stack Manipulation
     final static private String IMP_STACK = " ";
+    // [Space]	Number	Push the number onto the stack
+    final static private String STACK_PUSH_NR = " ";
+    /*[LF][Space]	-	Duplicate the top item on the stack
+    [Tab][Space]	Number	Copy the nth item on the stack (given by the argument) onto the top of the stack
+    [LF][Tab]	-	Swap the top two items on the stack
+    [LF][LF]	-	Discard the top item on the stack
+    [Tab][LF]	Number	Slide n items off the stack, keeping the top item*/
+
     //[Tab][Space]	Arithmetic
     //[Tab][Tab]	Heap access
     //[LF]	Flow Control
@@ -18,14 +26,6 @@ public class WhiteSpaceProgram {
 
     /*Stack Manipulation (IMP: [Space])
     Stack manipulation is one of the more common operations, hence the shortness of the IMP [Space]. There are four stack instructions.
-
-    Command	Parameters	Meaning
-    [Space]	Number	Push the number onto the stack
-    [LF][Space]	-	Duplicate the top item on the stack
-    [Tab][Space]	Number	Copy the nth item on the stack (given by the argument) onto the top of the stack
-    [LF][Tab]	-	Swap the top two items on the stack
-    [LF][LF]	-	Discard the top item on the stack
-    [Tab][LF]	Number	Slide n items off the stack, keeping the top item*/
 
     // TODO: push(Char) & push(BigInteger) -> Convert to ws binary notation
     public WhiteSpaceProgram stackPushString(String string) {
@@ -40,7 +40,11 @@ public class WhiteSpaceProgram {
      * @return
      */
     public WhiteSpaceProgram stackPushChar(char character) {
-        program.append(IMP_STACK).append(BitUtils.charAsWspaceNumber(character)).append(CR);
+        final String charAsWspace = BitUtils.charAsWspaceNumber(character);
+        program.append(IMP_STACK)
+            .append(STACK_PUSH_NR)
+            .append(charAsWspace)
+            .append(CR);
         return this;
     }
 
