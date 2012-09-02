@@ -12,4 +12,12 @@ public class WhiteSpaceProgramTest {
         assertEquals("SS(Stack IMP, push nr) S(pos nr) STTSTSTS(j) CR",
             "   \t\t \t \t \r", program);
     }
+
+    @Test
+    public void testPopSingleChar() {
+        final String program = new WhiteSpaceProgram().ioPopChar().toString();
+        assertEquals("[Tab][LF](I/O IMP), [Space][Space] Output the character at the top of the stack, CR",
+                "\t\n  \r", program);
+    }
+
 }
