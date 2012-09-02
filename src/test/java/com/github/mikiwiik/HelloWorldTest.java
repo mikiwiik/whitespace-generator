@@ -36,7 +36,7 @@ public class HelloWorldTest {
                 .flowEndProgram()
                 .toString();
 
-        final String shellOutput = ShellHelper.runWSpaceInShell(program);
+        final String shellOutput = WhiteSpaceUtils.runWSpaceInShell(program);
         assertEquals("Hello world", shellOutput);
     }
 
