@@ -61,5 +61,10 @@
           <artifactId>guava-collections</artifactId>
           <version>r03</version>
       </dependency>
+      <dependency>
+          <groupId>com.intellij</groupId>
+          <artifactId>annotations</artifactId>
+          <version>9.0.4</version>
+      </dependency>
   </dependencies>
 </project>

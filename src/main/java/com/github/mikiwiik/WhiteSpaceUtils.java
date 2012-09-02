@@ -2,6 +2,8 @@ package com.github.mikiwiik;
 
 import com.google.common.collect.Lists;
 import org.apache.commons.io.FileUtils;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -26,6 +28,7 @@ class WhiteSpaceUtils {
      * @param character
      * @return 
      */
+    @NotNull
     static String charAsNumber(char character) {
         // NOTE: all characters are positive wspace numbers.
         final StringBuilder stringBuilder = new StringBuilder(" ");
@@ -50,7 +53,7 @@ class WhiteSpaceUtils {
      * @throws java.io.IOException
      */
     // TODO: @Nullable
-    static String runWSpaceInShell(String wspaceProgram) throws IOException {
+    static String runWSpaceInShell(@Nullable String wspaceProgram) throws IOException {
         final File wsFile = File.createTempFile("wspace-generator_", ".ws");
         FileUtils.writeStringToFile(wsFile, wspaceProgram);
         final Process shellProcess = Runtime.getRuntime().exec(new String[]{"wspace", wsFile.getAbsolutePath()});
