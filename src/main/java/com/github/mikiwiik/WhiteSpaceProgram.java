@@ -1,5 +1,7 @@
 package com.github.mikiwiik;
 
+import org.jetbrains.annotations.NotNull;
+
 public class WhiteSpaceProgram {
 
     final static private String CR = "\r";
@@ -53,6 +55,34 @@ public class WhiteSpaceProgram {
         program.append(IMP_FLOW).append(FLOW_END_PROGRAM).append(CR);
         return this;
     }
+
+    /**
+     * Append free-form Stack command
+     * @param command
+     * @param params
+     * @return
+     */
+    public WhiteSpaceProgram stackCommand(@NotNull String command, @NotNull String params) {
+        program.append(IMP_STACK).append(command).append(params).append(CR);
+        return this;
+    }
+
+    public WhiteSpaceProgram stackCommand(@NotNull String command) {
+        program.append(IMP_STACK).append(command).append(CR);
+        return this;
+    }
+
+    /**
+     * Append free-form Flow command
+     * @param command
+     * @param params
+     * @return
+     */
+    public WhiteSpaceProgram flowCommand(@NotNull String command, @NotNull String params) {
+        program.append(IMP_FLOW).append(command).append(params).append(CR);
+        return this;
+    }
+
 
     /**
      * @return The current program as a String.
