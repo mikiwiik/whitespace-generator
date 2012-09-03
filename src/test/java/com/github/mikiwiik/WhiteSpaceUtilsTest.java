@@ -7,7 +7,7 @@ import static junit.framework.Assert.assertEquals;
 public class WhiteSpaceUtilsTest {
 
     @Test
-    public void testConvertingSingleChars() throws Exception {
+    public void testCharAsNumber() throws Exception {
         assertEquals("LF: 00001010    \t \t ",
             "     \t \t \n",
             WhiteSpaceUtils.charAsNumber('\n'));
