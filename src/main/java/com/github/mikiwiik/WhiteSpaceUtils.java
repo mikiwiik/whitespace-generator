@@ -30,15 +30,28 @@ class WhiteSpaceUtils {
      */
     @NotNull
     static String charAsNumber(char character) {
+        byte asciiValue = (byte)character;
         // NOTE: all characters are positive wspace numbers.
-        final StringBuilder stringBuilder = new StringBuilder(" ");
+        return " " + bytesAsWspaceNumber(new byte[]{asciiValue});
+    }
 
-        int asciiValue = (int)character;
-        for (int i = 0; i < 8; i++) {
-            final boolean binaryValue = (asciiValue & 128) != 0;
-            stringBuilder.append(binaryValue ? '\t' : ' ');
-            asciiValue <<= 1;
+    /**
+     * Convert gíven bytes to wspace number representation.<br/>
+     * NOTE: The signum must be handled by the caller.
+     *
+     * @param bytes
+     * @return
+     */
+    private static String bytesAsWspaceNumber(@NotNull byte[] bytes) {
+        final StringBuilder stringBuilder = new StringBuilder(bytes.length *8 + 1);
+        for (byte asciiValue : bytes) {
+            for (byte i = 0; i < 8; i++) {
+                final boolean binaryValue = (asciiValue & 128) != 0;
+                stringBuilder.append(binaryValue ? '\t' : ' ');
+                asciiValue <<= 1;
+            }
         }
+
         // Numbers are terminated by a [LF].
         stringBuilder.append('\n');
         return stringBuilder.toString();
